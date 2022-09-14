@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {observer} from "mobx-react-lite";
-import todoStore from "../store/todoStore";
+import todoStore from "../../store/todoStore";
 
 const AddTodoItem = observer(() => {
     const [todoTask, setTodoTask] = useState('');
