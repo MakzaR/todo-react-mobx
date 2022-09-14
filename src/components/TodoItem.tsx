@@ -7,7 +7,7 @@ const TodoItem = observer(({todo}: ITodoItemProps) =>  {
         <div>
             <input type={"checkbox"} defaultChecked={todo.completed} onChange={() => todoStore.toggleCompleted(todo)}/>
             <span>{todo.task}</span>
-            <button onClick={() => todoStore.removeTodo(todo)}>Delete</button>
+            <button onClick={() => todoStore.removeTodo(todo)}>X</button>
         </div>
     );
 })
