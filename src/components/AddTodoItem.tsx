@@ -6,8 +6,10 @@ const AddTodoItem = observer(() => {
     const [todoTask, setTodoTask] = useState('');
 
     function handleAddTodo(task: string) {
-        todoStore.addTodo(task);
-        setTodoTask('');
+        if (task) {
+            todoStore.addTodo(task);
+            setTodoTask('');
+        }
     }
 
     function handleKeyPress(event: React.KeyboardEvent) {
@@ -18,7 +20,8 @@ const AddTodoItem = observer(() => {
 
     return (
         <div>
-            <input type={"text"} value={todoTask} onChange={(e) => setTodoTask(e.target.value)} onKeyDown={handleKeyPress}/>
+            <input type={"text"} value={todoTask} onChange={(e) => setTodoTask(e.target.value)}
+                   onKeyDown={handleKeyPress}/>
             <button onClick={() => handleAddTodo(todoTask)}>+ Добавить</button>
         </div>
     );

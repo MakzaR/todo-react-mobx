@@ -5,29 +5,14 @@ import TodoItem from "./TodoItem";
 import AddTodoItem from "./AddTodoItem";
 
 const TodoList = observer(() => {
-
-    // function getFilteredTodos(filter: string) {
-    //     switch (filter) {
-    //         case 'all':
-    //             return todoStore.todoItemsList;
-    //         case 'completed':
-    //             return todoStore.completedTodoItems;
-    //         case 'open':
-    //             return todoStore.openTodoItems;
-    //     }
-    // }
-
     return (
         <>
             <AddTodoItem/>
             <div>
-                {todoStore.todoItemsList.map(todoItem => <TodoItem todo={todoItem} key={todoItem.id}/>)}
-                {/*<button onClick={() => todoStore.todoItemsList}>All</button>*/}
-                {/*<button onClick={() => todoStore.completedTodoItems}>Completed</button>*/}
-                {/*<button onClick={() => todoStore.openTodoItems}>Open</button>*/}
-                {/*<select>*/}
-
-                {/*</select>*/}
+                <button onClick={() => todoStore.changeFilter('all')}>Все</button>
+                <button onClick={() => todoStore.changeFilter('completed')}>Выполненные</button>
+                <button onClick={() => todoStore.changeFilter('open')}>Невыполненные</button>
+                {todoStore.filteredTodoItems.map(todoItem => <TodoItem todo={todoItem} key={todoItem.id}/>)}
             </div>
         </>
     );

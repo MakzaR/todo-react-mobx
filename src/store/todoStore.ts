@@ -19,6 +19,8 @@ class TodoStore {
         }
     ];
 
+    filter = 'all';
+
     constructor() {
         makeAutoObservable(this);
     }
@@ -29,6 +31,19 @@ class TodoStore {
 
     get openTodoItems(): Array<ITodoItem> {
         return this.todoItemsList.filter(todoItem => !todoItem.completed)
+    }
+
+    get filteredTodoItems(): Array<ITodoItem> {
+        switch (this.filter) {
+            case 'all':
+                return this.todoItemsList;
+            case 'completed':
+                return this.completedTodoItems;
+            case 'open':
+                return this.openTodoItems;
+            default:
+                throw new Error('Неизвестный фильтр');
+        }
     }
 
     addTodo(task: string) {
@@ -43,8 +58,12 @@ class TodoStore {
         this.todoItemsList.splice(this.todoItemsList.indexOf(todoItem), 1);
     }
 
-    toggleCompleted (todoItem: ITodoItem) {
+    toggleCompleted(todoItem: ITodoItem) {
         todoItem.completed = !todoItem.completed;
+    }
+
+    changeFilter(filter: string) {
+        this.filter = filter;
     }
 }
 
