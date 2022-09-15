@@ -7,7 +7,7 @@ import styles from './TodoItem.module.scss';
 const TodoItem = observer(({todo}: ITodoItemProps) => {
     return (
         <div className={styles.todoContainer}>
-            <input type={"checkbox"} defaultChecked={todo.completed} onChange={() => todoStore.toggleCompleted(todo)}/>
+            <input className={styles.checkbox} type={"checkbox"} defaultChecked={todo.completed} onChange={() => todoStore.toggleCompleted(todo)}/>
             <span className={styles.taskText}>{todo.task}</span>
             <button className={styles.deleteButton} onClick={() => {
                 todoStore.removeTodo(todo);
