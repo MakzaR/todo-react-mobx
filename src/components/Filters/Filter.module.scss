@@ -1,3 +1,17 @@
+$min-width: 1200px;
+
+$font-size-desktop: 12px;
+$font-size-mobile: 1.5em;
+
+$padding-desktop: 1.5em;
+$padding-mobile: 3em;
+
+$gap-desktop: 12px;
+$gap-mobile: 1em;
+
+$filter-padding-desktop: 5px;
+$filter-padding-mobile: 0.5em;
+
 $button-color: black;
 $button-color-hover: #F0F0F0;
 $button-color-active: #C8C8C8;
@@ -5,11 +19,11 @@ $button-color-active: #C8C8C8;
 $button-text-color: #666666;
 $button-text-color-active: white;
 
-@mixin button-font() {
+@mixin button-font($font-size) {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
+  font-size: $font-size;
 }
 
 @mixin button-font-color($color) {
@@ -18,16 +32,18 @@ $button-text-color-active: white;
 
 .filtersContainer {
   display: flex;
-  gap: 12px;
-  padding: 0 24px;
+  gap: $gap-mobile;
+  padding: 0 $padding-mobile;
+
+  @media screen and (min-width: $min-width) {
+    gap: $gap-desktop;
+    padding: 0 $padding-desktop;
+  }
 }
 
 .filterButton {
   flex: auto;
-  padding: 5px;
-
-  @include button-font();
-  @include button-font-color($button-text-color);
+  padding: $filter-padding-mobile;
 
   text-decoration: underline;
   background: none;
@@ -35,10 +51,19 @@ $button-text-color-active: white;
 
   cursor: pointer;
 
-  &:hover {
-    background-color: $button-color-hover;
-    @include button-font-color($button-text-color);
-    text-decoration:  none;
+  @include button-font-color($button-text-color);
+  @include button-font($font-size-mobile);
+
+  @media screen and (min-width: $min-width) {
+    padding: $filter-padding-desktop;
+
+    @include button-font($font-size-desktop);
+
+    &:hover {
+      background-color: $button-color-hover;
+      @include button-font-color($button-text-color);
+      text-decoration:  none;
+    }
   }
 }
 
