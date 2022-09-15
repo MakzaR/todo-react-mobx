@@ -44,6 +44,8 @@ $button-text-color: white;
   background-color: $button-color;
   color: $button-text-color;
 
+  cursor: pointer;
+
   &:hover {
     background-color: $button-color-hover;
     border: none;

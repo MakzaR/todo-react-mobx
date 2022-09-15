@@ -2,14 +2,16 @@ import React from 'react';
 import {observer} from "mobx-react-lite";
 import todoStore from "../../store/todoStore";
 
+import styles from './TodoItem.module.scss';
+
 const TodoItem = observer(({todo}: ITodoItemProps) => {
     return (
-        <div>
+        <div className={styles.todoContainer}>
             <input type={"checkbox"} defaultChecked={todo.completed} onChange={() => todoStore.toggleCompleted(todo)}/>
-            <span>{todo.task}</span>
-            <button onClick={() => {
+            <span className={styles.taskText}>{todo.task}</span>
+            <button className={styles.deleteButton} onClick={() => {
                 todoStore.removeTodo(todo);
-            }}>X
+            }}>+
             </button>
         </div>
     );
