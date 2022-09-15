@@ -1,3 +1,22 @@
+$min-width: 1200px;
+
+$font-size-desktop: 0.875em;
+$font-size-mobile: 1.5em;
+
+$margin-desktop: 1.5em;
+$margin-mobile: 3em;
+
+$padding-desktop: 1.5em;
+$padding-mobile: 3em;
+
+$gap-desktop: 1em;
+$gap-mobile: 2em;
+
+$input-height-desktop: 2em;
+$input-height-mobile: 2em;
+$input-padding-desktop: 12px;
+$input-padding-mobile: 0.5em;
+
 $placeholder-color: #B7B7B7;
 
 $button-color: black;
@@ -5,31 +24,38 @@ $button-color-hover: #4B4B4B;
 
 $button-text-color: white;
 
-@mixin placeholder-font($color) {
+@mixin input-font($font-size, $color) {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
+  font-size: $font-size;
   color: $color;
+  line-height: $font-size;
 }
 
 .formContainer {
   display: flex;
-  gap: 12px;
-  margin: 24px auto;
-  padding: 0 24px;
+  gap: $gap-mobile;
+  padding: $padding-mobile;
+
+  @media screen and (min-width: $min-width) {
+    gap: $gap-desktop;
+    padding: $padding-desktop;
+  }
 }
 
 .input {
   flex: auto;
-  padding: 10px;
-
-  height: 32px;
-
+  padding: $input-padding-mobile;
   border: 2px solid black;
 
-  &::placeholder {
-    @include placeholder-font($placeholder-color);
+  @include input-font($font-size-mobile, black);
+
+  @media screen and (min-width: $min-width) {
+    padding-left: $input-padding-desktop;
+    height: 2rem;
+
+    @include input-font($font-size-desktop, black);
   }
 
   &:focus {
@@ -38,14 +64,19 @@ $button-text-color: white;
 }
 
 .addButton {
-  width: 32px;
-  height: 32px;
+  width: 2em;
 
   background-color: $button-color;
   color: $button-text-color;
-  border: none;
+  font-size: 2em;
 
+  border: none;
   cursor: pointer;
+
+  @media screen and (min-width: $min-width) {
+    width: 2em;
+    font-size: 1em;
+  }
 
   &:hover {
     background-color: $button-color-hover;

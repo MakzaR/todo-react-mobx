@@ -1,40 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=JetBrains+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-@mixin desktopHeadingFont() {
+$min-width: 1200px;
+$max-width: 768px;
+
+$font-size-desktop: 1.5em;
+$font-size-mobile: 3em;
+
+$padding-desktop: 2em;
+$padding-mobile: 5em;
+
+$width-desktop: 30vw;
+$width-mobile: 90vw;
+
+@mixin heading-font($font-size) {
   font-family: 'JetBrains Mono', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.5em;
-}
-
-@mixin mobileHeadingFont() {
-  font-family: 'JetBrains Mono', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 3em;
+  font-size: $font-size;
 }
 
 .container {
   text-align: center;
   margin: 1.5em auto;
-  padding: 5em;
+  padding: $padding-mobile;
 
   height: fit-content;
-  width: 90vw;
+  width: $width-mobile;
 
   background-color: white;
   box-shadow: 5px 6px 19px rgba(0, 0, 0, 0.07);
 
-  @media screen and (min-width: 1200px) {
-    width: 30vw;
-    padding: 2em;
+  @media screen and (min-width: $min-width) {
+    width: $width-desktop;
+    padding: $padding-desktop;
+  }
+
+  @media screen and (max-width: $max-width){
+    width: $max-width;
   }
 }
 
 h1 {
-  @include mobileHeadingFont();
+  @include heading-font($font-size-mobile);
 
-  @media screen and (min-width: 1200px) {
-    @include desktopHeadingFont();
+  @media screen and (min-width: $min-width) {
+    @include heading-font($font-size-desktop);
   }
 }
