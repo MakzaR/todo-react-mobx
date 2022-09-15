@@ -1,10 +1,25 @@
+$min-width: 1200px;
+
+$padding-desktop: 1.5em;
+$padding-mobile: 1em;
+
+$margin-desktop: 1.5em;
+$margin-mobile: 3em;
+
+$gap-desktop: 0.5em;
+
 .todoListContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 
-  margin-top: 24px;
-  padding: 0 24px;
+  margin-top: $margin-mobile;
+  padding: 0 $padding-mobile;
 
   text-align: left;
+
+  @media screen and (min-width: $min-width) {
+    margin-top: $margin-desktop;
+    padding: 0 $padding-desktop;
+    gap: $gap-desktop;
+  }
 }

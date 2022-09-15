@@ -19,7 +19,7 @@ class TodoStore {
         }
     ];
 
-    filter = 'all';
+    filter: string = 'all';
 
     constructor() {
         makeAutoObservable(this);
