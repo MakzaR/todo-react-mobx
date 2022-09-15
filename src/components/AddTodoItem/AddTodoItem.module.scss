@@ -43,11 +43,11 @@ $button-text-color: white;
 
   background-color: $button-color;
   color: $button-text-color;
+  border: none;
 
   cursor: pointer;
 
   &:hover {
     background-color: $button-color-hover;
-    border: none;
   }
 }
