@@ -1,0 +1,44 @@
+$placeholder-color: #B7B7B7;
+$button-color: black;
+$button-text-color: white;
+
+@mixin placeholder-font($color) {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color;
+}
+
+.formContainer {
+  display: flex;
+  gap: 12px;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+
+.input {
+  flex: auto;
+  padding: 10px;
+
+  height: 32px;
+
+  border: 2px solid black;
+
+  &::placeholder {
+    @include placeholder-font($placeholder-color);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.addButton {
+  width: 32px;
+  height: 32px;
+
+  background-color: $button-color;
+  color: $button-text-color;
+}

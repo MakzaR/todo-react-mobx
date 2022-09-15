@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono');
+
+@mixin font() {
+  font-family: 'JetBrains Mono', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.container {
+  text-align: center;
+  margin: 24px auto;
+  padding: 36px;
+
+  height: fit-content;
+  width: 500px;
+
+  background-color: white;
+  box-shadow: 5px 6px 19px rgba(0, 0, 0, 0.07);
+}
+
+h1 {
+  @include font();
+}
