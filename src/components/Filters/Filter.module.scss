@@ -1,0 +1,55 @@
+$button-color: black;
+$button-hover-color: #F0F0F0;
+$button-active-color: #C8C8C8;
+
+$button-text-color: #666666;
+$button-text-color-active: white;
+
+@mixin button-font() {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+@mixin button-font-color($color) {
+  color: $color;
+}
+
+.filtersContainer {
+  display: flex;
+  gap: 12px;
+  padding: 0 48px;
+}
+
+.filterButton {
+  flex: auto;
+  padding: 5px;
+
+  @include button-font();
+  @include button-font-color($button-text-color);
+
+  text-decoration: underline;
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  //&:focus {
+  //  background-color: $button-color;
+  //  @include button-font-color($button-text-color-active);
+  //  text-decoration:  none;
+  //}
+
+  &:hover {
+    background-color: $button-hover-color;
+    @include button-font-color($button-text-color);
+    text-decoration:  none;
+  }
+}
+
+.activeButton {
+  background-color: $button-color;
+  @include button-font-color($button-text-color-active);
+  text-decoration:  none;
+}
