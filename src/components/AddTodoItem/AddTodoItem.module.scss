@@ -1,5 +1,8 @@
 $placeholder-color: #B7B7B7;
+
 $button-color: black;
+$button-color-hover: #4B4B4B;
+
 $button-text-color: white;
 
 @mixin placeholder-font($color) {
@@ -40,4 +43,9 @@ $button-text-color: white;
 
   background-color: $button-color;
   color: $button-text-color;
+
+  &:hover {
+    background-color: $button-color-hover;
+    border: none;
+  }
 }

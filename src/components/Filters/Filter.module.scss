@@ -1,6 +1,6 @@
 $button-color: black;
-$button-hover-color: #F0F0F0;
-$button-active-color: #C8C8C8;
+$button-color-hover: #F0F0F0;
+$button-color-active: #C8C8C8;
 
 $button-text-color: #666666;
 $button-text-color-active: white;
@@ -35,14 +35,8 @@ $button-text-color-active: white;
 
   cursor: pointer;
 
-  //&:focus {
-  //  background-color: $button-color;
-  //  @include button-font-color($button-text-color-active);
-  //  text-decoration:  none;
-  //}
-
   &:hover {
-    background-color: $button-hover-color;
+    background-color: $button-color-hover;
     @include button-font-color($button-text-color);
     text-decoration:  none;
   }
