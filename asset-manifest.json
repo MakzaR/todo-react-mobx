@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todo-react-mobx/static/css/main.64305e09.css",
+    "main.js": "/todo-react-mobx/static/js/main.475766da.js",
+    "index.html": "/todo-react-mobx/index.html",
+    "main.64305e09.css.map": "/todo-react-mobx/static/css/main.64305e09.css.map",
+    "main.475766da.js.map": "/todo-react-mobx/static/js/main.475766da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64305e09.css",
+    "static/js/main.475766da.js"
+  ]
+}
