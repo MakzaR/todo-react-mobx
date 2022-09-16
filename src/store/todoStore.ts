@@ -4,17 +4,27 @@ class TodoStore {
     todoItemsList: Array<ITodoItem> = [
         {
             id: 1,
-            task: 'Learn MobX',
+            task: 'Подучить MobX',
             completed: true
         },
         {
             id: 2,
-            task: 'Learn TypeScript',
+            task: 'Подучить TypeScript',
             completed: true
         },
         {
             id: 3,
-            task: 'Make test task with todo list',
+            task: 'Выполнить тестовое задание с todo листом',
+            completed: false
+        },
+        {
+            id: 4,
+            task: 'Ещё одно супер пупер длинное задание на несколько строк, чтобы проверить вёрстку (на всякий случай)',
+            completed: false
+        },
+        {
+            id: 5,
+            task: 'Даже/если/прописать/всё/в/одну/строку/без/пробелов/вёрска/не/сломается',
             completed: false
         }
     ];

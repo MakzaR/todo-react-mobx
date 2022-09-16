@@ -36,6 +36,7 @@ $button-text-color: #686868;
 
 .todoContainer {
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding: $padding-mobile;
   gap: $gap-mobile;
@@ -65,6 +66,9 @@ $button-text-color: #686868;
 }
 
 .taskText {
+  flex: 2;
+  word-break: break-word;
+
   @include task-font($font-size-mobile);
 
   @media screen and (min-width: $min-width) {

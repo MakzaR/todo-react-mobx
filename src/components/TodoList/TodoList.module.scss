@@ -1,5 +1,8 @@
 $min-width: 1200px;
 
+$font-size-desktop: 14px;
+$font-size-mobile: 1.5em;
+
 $padding-desktop: 1.5em;
 $padding-mobile: 1em;
 
@@ -7,6 +10,17 @@ $margin-desktop: 1.5em;
 $margin-mobile: 3em;
 
 $gap-desktop: 0.5em;
+
+$font-color: #666666;
+
+@mixin font($font-size) {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: $font-size;
+  color: $font-color;
+  line-height: $font-size;
+}
 
 .todoListContainer {
   display: flex;
@@ -21,5 +35,15 @@ $gap-desktop: 0.5em;
     margin-top: $margin-desktop;
     padding: 0 $padding-desktop;
     gap: $gap-desktop;
+  }
+}
+
+.plug {
+  text-align: center;
+
+  @include font($font-size-mobile);
+
+  @media screen and (min-width: $min-width) {
+    @include font($font-size-desktop);
   }
 }

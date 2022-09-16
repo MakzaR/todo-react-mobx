@@ -6,9 +6,13 @@ import TodoItem from "../TodoItem/TodoItem";
 import styles from './TodoList.module.scss';
 
 const TodoList = observer(() => {
+    const todos = todoStore.filteredTodoItems;
+
     return (
         <div className={styles.todoListContainer}>
-            {todoStore.filteredTodoItems.map(todoItem => <TodoItem todo={todoItem} key={todoItem.id}/>)}
+            {todos.length > 0 ?
+                todos.map(todoItem => <TodoItem todo={todoItem} key={todoItem.id}/>) :
+                <span className={styles.plug}>Нет заданий</span>}
         </div>
     );
 })
